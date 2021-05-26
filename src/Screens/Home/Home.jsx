@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useHistory } from 'react-router-dom'
+import GetDataExample from '../../Components/GetDataExample/GetDataExample'
 import Logout from '../../Components/Logout/Logout'
 import { auth } from '../../Services/FirebaseConnection'
 
@@ -21,6 +22,7 @@ const Home = () => {
           loading && <p>Cargando...</p>
         }
       <Logout />
+      <GetDataExample />
     </div>
   )
 }
