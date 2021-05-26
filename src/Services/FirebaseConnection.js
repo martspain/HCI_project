@@ -16,7 +16,6 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 
 export {
-    auth,
-    firebase,
-    firestore
+  auth,
+  firestore
 }

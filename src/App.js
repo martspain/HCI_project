@@ -1,18 +1,17 @@
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
-import Login from './Screens/Login';
-import { auth } from './Services/FirebaseConnection';
-import Home from './Screens/Home';
+import Login from './Screens/Login/Login';
+import Home from './Screens/Home/Home';
 
-function App() {
-  const [user] = useAuthState(auth)
-  return (
-    <div className="App">
-      {
-        user ? <Home /> : <Login />
-      }
-    </div>
-  );
-}
+const App =() => (
+  <div className="App">
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" exact component={Login} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </BrowserRouter>
+  </div>
+)
 
 export default App;
