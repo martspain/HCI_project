@@ -5,7 +5,7 @@ import UpdateDataExample from '../SetDataExample/UpdateDataExample'
 
 const GetDataExample = () => {
   const productsRef = firestore.collection('products')
-  const queryOrderCategoria = productsRef.orderBy('categoria').limit(25)
+  const queryOrderCategoria = productsRef.orderBy('category').limit(25)
   const [products] = useCollectionData(queryOrderCategoria, { idField: 'id' })
 
   return (

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import Login from './Screens/Login/Login';
 import Home from './Screens/Home/Home';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App =() => (
   <div className="App">
