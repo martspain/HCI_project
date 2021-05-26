@@ -1,0 +1,23 @@
+.Food-Container{
+    width: calc(100vw);
+    height: calc(100vw);
+    background-color: #eeeeee;
+}
+
+.Food-row{
+    margin-left: 3vw;
+    overflow-x: scroll;
+}
+
+.Food-Title{
+    text-align: start;
+}
+
+.Food-header{
+    font-size: 3em;
+}
+
+.Food-prods{
+    height: 30vh;
+    width: 100%;
+}
