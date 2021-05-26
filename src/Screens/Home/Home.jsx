@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useHistory } from 'react-router-dom'
 import GetDataExample from '../../Components/GetDataExample/GetDataExample'
 import Logout from '../../Components/Logout/Logout'
+import Tabs from '../../Components/Tabs/Tabs'
 import { auth } from '../../Services/FirebaseConnection'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <div>
+      <Tabs />
       <p>Home</p>
         {
           loading && <p>Cargando...</p>
