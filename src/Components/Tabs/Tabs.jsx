@@ -4,7 +4,7 @@ import Tab from '@material-ui/core/Tab'
 import { Box, makeStyles, withStyles } from '@material-ui/core'
 import SwipeableViews from 'react-swipeable-views'
 import { Fastfood, MenuBook } from '@material-ui/icons';
-import Food2 from '../../Screens/Food/Food2'
+import Food from '../../Screens/Food/Food'
 import Recipes from '../../Screens/Recipes/Recipes'
 import Sell from '../../Screens/Sell/Sell'
 import { ReactComponent as SellIcon } from './sell.svg'
@@ -115,7 +115,7 @@ const TabsNav = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0}>
-          <Food2 />
+          <Food />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Recipes />
