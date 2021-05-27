@@ -3,8 +3,8 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { Box, makeStyles, withStyles } from '@material-ui/core'
 import SwipeableViews from 'react-swipeable-views'
-import { Fastfood, MenuBook } from '@material-ui/icons';
-import Food2 from '../../Screens/Food/Food2'
+import { Fastfood, MenuBook } from '@material-ui/icons'
+import Food from '../../Screens/Food/Food'
 import Recipes from '../../Screens/Recipes/Recipes'
 import Sell from '../../Screens/Sell/Sell'
 import { ReactComponent as SellIcon } from './sell.svg'
@@ -19,7 +19,7 @@ const TabPanel = ({ children, value, index, ...other }) => (
   >
     {
       value === index && (
-        <Box p={3}>
+        <Box>
           {children}
         </Box>
       )
@@ -63,13 +63,6 @@ const StyledTab = withStyles((theme) => ({
       fill: 'gray',
       height: 20,
     },
-    '&:focus': {
-      color: 'orange',
-      opacity: 1,
-      '& svg': {
-        fill: 'orange',
-      },
-    },
   },
 }))((props) => <Tab disableRipple {...props} />)
 
@@ -80,6 +73,13 @@ const useStyles = makeStyles((theme) => ({
   'hci-theme': {
     backgroundColor: '#FFF9F1',
   },
+  activeTab: {
+    color: 'orange',
+    opacity: 1,
+    '& svg': {
+      fill: 'orange',
+    },
+  }
 }))
 
 
@@ -104,9 +104,24 @@ const TabsNav = () => {
           aria-label="simple tabs example"
           variant="fullWidth"
         >
-          <StyledTab icon={<Fastfood />} label="Comida" {...a11yProps(0)} />
-          <StyledTab icon={<MenuBook />} label="Recetas" {...a11yProps(1)} />
-          <StyledTab icon={<SellIcon />} label="Vender" {...a11yProps(2)} />
+          <StyledTab
+            icon={<Fastfood />}
+            label="Comida"
+            {...a11yProps(0)}
+            className={(value === 0) ? classes.activeTab : ''}
+          />
+          <StyledTab
+            icon={<MenuBook />}
+            label="Recetas"
+            {...a11yProps(1)}
+            className={(value === 1) ? classes.activeTab : ''}
+          />
+          <StyledTab
+            icon={<SellIcon />}
+            label="Vender"
+            {...a11yProps(2)}
+            className={(value === 2) ? classes.activeTab : ''}
+          />
         </StyledTabs>
       </div>
       <SwipeableViews
@@ -115,7 +130,7 @@ const TabsNav = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0}>
-          <Food2 />
+          <Food />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Recipes />
