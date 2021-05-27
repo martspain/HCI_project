@@ -17,6 +17,7 @@ const Home = () => {
 
   return (
     <div>
+      <Logout />
       <Tabs />
     </div>
   )
