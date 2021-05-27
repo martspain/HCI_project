@@ -12,7 +12,7 @@ const Food = () => {
   const [products] = useCollectionData(response, { idField: 'id' })
   console.log(products)
   return (
-    <div className="Food-Containter">
+    <div className="Food-Container">
       <Search />
       <h1>Ofertas</h1>
       <div className="carousel slide Food-customCarousel" data-ride="carousel" data-type="multi">

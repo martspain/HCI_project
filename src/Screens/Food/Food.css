@@ -1,27 +1,27 @@
-.Food-Container{
+.Food-Container {
     max-height: calc(100vh - 80px);
     padding-top: 50px;
     background-color: #e5e5e5;
 }
 
-.Food-row{
+.Food-row {
     margin-left: 3vw;
 }
 
-.Food-Title{
+.Food-Title {
     text-align: start;
 }
 
-.Food-header{
+.Food-header {
     font-size: 3em;
 }
 
-.Food-prods{
+.Food-prods {
     height: 30vh;
     width: 100%;
 }
 
-.Food-test{
+.Food-test {
     background-color: blue;
     width: 18vw;
     height: 18vh;
@@ -30,7 +30,7 @@
     margin-left: 3em;
 }
 
-.Food-test2{
+.Food-test2 {
     background-color: red;
     width: 18vw;
     height: 18vh;
@@ -39,7 +39,7 @@
     margin-left: 3em;
 }
 
-.Food-customA{
+.Food-customA {
     color:black;
 }
 
@@ -49,3 +49,7 @@
     padding: 5px; 
     float: left;
  }
+
+.Food-customCarousel {
+    height: 2000px;
+}
