@@ -69,9 +69,12 @@ const StyledTab = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    position: 'fixed',
+    width: '100%',
   },
   'hci-theme': {
     backgroundColor: '#FFF9F1',
+    boxShadow: '0px 0px 7px #bebebe',
   },
   activeTab: {
     color: 'orange',

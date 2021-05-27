@@ -7,34 +7,48 @@ const Bar = styled.div`
   width: 100%;
   height: 30px;
   box-shadow: 0px 0px 7px #bebebe;
-  display: grid;
-  grid-template-columns: 1fr 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   input {
-    margin-left: 10px;
+    padding-left: 10px;
+    width: 100%;
     text-align: left;
     border: 0;
     background-color: transparent;
+    & + div {
+      position: absolute;
+      top: 28px;
+      width: 0%;
+      height: 2px;
+      transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
 
     &:focus {
       outline: none;
-
-      &:before {
-        content: '';
-        border-bottom: 2px solid orange;
+      & + div {
+        width: 100%;
+        background-color: orange;
       }
     }
   }
 
   svg {
     margin-top: 3px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
   }
 `
 
 const Search = () => {
   return (
     <Bar>
-      <input />
+      <input
+        placeholder="Buscar"
+      />
+      <div />
       <SearchIcon />
     </Bar>
   )

@@ -19,12 +19,6 @@ const Home = () => {
   return (
     <div>
       <Tabs />
-      <p>Home</p>
-        {
-          loading && <p>Cargando...</p>
-        }
-      <Logout />
-      <GetDataExample />
     </div>
   )
 }
