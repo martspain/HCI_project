@@ -11,7 +11,7 @@ const CardProduct = ({
     img,
 }) => {
     return (
-        <div className='carousel-item active cardProduct-container'>
+        <div className='col-2 carousel-item active cardProduct-container'>
             <img className="cardProduct-image" src={img}></img>
             <div className="row cardProduct-line1">
                 <h5 className="col-8 cardProduct-title">{title}</h5>
