@@ -13,35 +13,39 @@ const Food = () => {
   console.log(products)
   return (
     <div className="Food-Container">
-      <Search />
-      <h1>Ofertas</h1>
-      <div className="carousel slide Food-customCarousel" data-ride="carousel" data-type="multi">
-        <div className="carousel-inner" role="listbox">
-          <div className="carousel-item active">
-            <div className="row justify-content-center">
-              <div className="col-2 Food-test">Uno</div>
-              <div className="col-2 Food-test">Dos</div>
-              <div className="col-2 Food-test">tRES</div>
-              <div className="col-2 Food-test">CUATRO</div>
+      <Search
+        placeholder="Busca comida, no dejes que se desperdicie"
+      />
+      <div class="Food-Scrolleable">
+        <h1>Ofertas</h1>
+        <div className="carousel slide Food-customCarousel" data-ride="carousel" data-type="multi">
+          <div className="carousel-inner" role="listbox">
+            <div className="carousel-item active">
+              <div className="row justify-content-center">
+                <div className="col-2 Food-test">Uno</div>
+                <div className="col-2 Food-test">Dos</div>
+                <div className="col-2 Food-test">tRES</div>
+                <div className="col-2 Food-test">CUATRO</div>
+              </div>
+            </div>
+            <div className="carousel-item active">
+              <div className="row justify-content-center">
+                <div className="col-2 Food-test">Cinco</div>
+                <div className="col-2 Food-test"></div>
+                <div className="col-2 Food-test"></div>
+                <div className="col-2 Food-test"></div>
+              </div>
             </div>
           </div>
-          <div className="carousel-item active">
-            <div className="row justify-content-center">
-              <div className="col-2 Food-test">Cinco</div>
-              <div className="col-2 Food-test"></div>
-              <div className="col-2 Food-test"></div>
-              <div className="col-2 Food-test"></div>
-            </div>
-          </div>
+          <a className="carousel-control-prev" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-        <a className="carousel-control-prev" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
       </div>
     </div>
   )

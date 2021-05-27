@@ -1,7 +1,6 @@
 .Food-Container {
     max-height: calc(100vh - 80px);
-    padding-top: 50px;
-    background-color: #e5e5e5;
+    padding-top: 30px;
 }
 
 .Food-row {
@@ -49,6 +48,11 @@
     padding: 5px; 
     float: left;
  }
+
+.Food-Scrolleable {
+    background-color: #e5e5e5;
+    padding-top: 15px;
+}
 
 .Food-customCarousel {
     height: 2000px;

@@ -17,7 +17,9 @@ const Bar = styled.div`
   input {
     padding-left: 10px;
     width: 100%;
+    height: 30px;
     text-align: left;
+    font-size: 0.82em;
     border: 0;
     background-color: transparent;
     & + div {
@@ -45,11 +47,11 @@ const Bar = styled.div`
   }
 `
 
-const Search = () => {
+const Search = ({ placeholder }) => {
   return (
     <Bar>
       <input
-        placeholder="Buscar"
+        placeholder={placeholder}
       />
       <div />
       <SearchIcon />
