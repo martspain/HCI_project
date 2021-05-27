@@ -1,12 +1,11 @@
 .Food-Container{
     width: calc(100vw);
     height: calc(100vw);
-    background-color: #eeeeee;
+    background-color: #e5e5e5;
 }
 
 .Food-row{
     margin-left: 3vw;
-    overflow-x: scroll;
 }
 
 .Food-Title{
@@ -21,3 +20,32 @@
     height: 30vh;
     width: 100%;
 }
+
+.Food-test{
+    background-color: blue;
+    width: 18vw;
+    height: 18vh;
+    border: 2px solid black;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+.Food-test2{
+    background-color: red;
+    width: 18vw;
+    height: 18vh;
+    border: 2px solid black;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+.Food-customA{
+    color:black;
+}
+
+.Food-carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 5px; 
+    float: left;
+ }

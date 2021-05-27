@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { AppBar, Box, makeStyles, Typography } from '@material-ui/core'
-import Food from '../../Screens/Food/Food'
+import Food from '../../Screens/Food/Food.jsx'
 import Recipes from '../../Screens/Recipes/Recipes'
 import Sell from '../../Screens/Sell/Sell'
 
@@ -34,7 +34,7 @@ const a11yProps = (index) => {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: '#e5e5e5'
   }
 }))
 

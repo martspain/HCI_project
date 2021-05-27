@@ -1,0 +1,26 @@
+.cardProduct-container{
+    background-color: #fff;
+    width: 18vw;
+    height: max-content;
+    border: 1.5px solid black;
+    margin-left: 3vw;
+    margin-top: 3vw;
+}
+
+.cardProduct-image{
+    margin: 1rem;
+    width: 80%;
+    height: 10vh;
+    height: 10vw;
+}
+
+.cardProduct-cartIcon{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.cardProduct-text{
+    font-size: 1em;
+    text-align: start;
+    margin-left: 5%;
+}
