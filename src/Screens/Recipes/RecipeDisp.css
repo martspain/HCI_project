@@ -13,5 +13,17 @@
   justify-items: start;
   display: flex;
   flex-direction: row;
-  margin-left: 1%;
+  margin-left: 2%;
+}
+
+.RecipeBottomBar {
+  display: flex;
+  flex-direction: row;
+}
+
+button.recipeBottomBut {
+  height: 8.3vh;
+  flex-grow: 1;
+  background-color: #ffc971;
+  border-width: 0px;
 }

@@ -19,7 +19,7 @@ let steps = ["paso 1", "paso 2", "paso 3", "paso 4", "paso 5","paso 1", "paso 2"
       <Search
         placeholder="Busca recetas, aprovecha cualquier ingrediente"
       />
-      <RecipeDisp title = 'Receta' ingredients = {ing} steps = {steps}/>
+      <RecipeDisp title = 'Nombre de la receta' ingredients = {ing} steps = {steps}/>
       <RecipeBottomBar/>
     </Container>
   )

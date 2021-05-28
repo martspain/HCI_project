@@ -1,10 +1,14 @@
 import React from 'react'
+import './RecipeDisp.css'
 
-
-const RecipeBottomBar = () => {
+const RecipeBottomBar = ({goLeft, newRecipe, goRight}) => {
+  const left = '<'
+  const right = '>'
   return(
-    <div style = {{width: '100%', backgroundColor: 'blueviolet', height:'10%'}}>
-      BottomBar
+    <div className = 'RecipeBottomBar'>
+      <button className = 'recipeBottomBut' onClick={goLeft}> {left} </button>
+      <button className = 'recipeBottomBut' onClick={newRecipe}> + </button>
+      <button className = 'recipeBottomBut' onClick={goRight}> {right} </button>
     </div>
   )
 }
