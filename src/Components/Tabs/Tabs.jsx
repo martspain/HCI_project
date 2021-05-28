@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { Box, makeStyles, withStyles } from '@material-ui/core'
+import styled from 'styled-components'
 import SwipeableViews from 'react-swipeable-views'
 import { Fastfood, MenuBook } from '@material-ui/icons'
 import Food from '../../Screens/Food/Food'
 import Recipes from '../../Screens/Recipes/Recipes'
 import Sell from '../../Screens/Sell/Sell'
 import { ReactComponent as SellIcon } from './sell.svg'
+
+const TabContainer = styled.div`
+  max-height: calc(100vh - 80px);
+`
 
 const TabPanel = ({ children, value, index, ...other }) => (
   <div
@@ -19,9 +24,9 @@ const TabPanel = ({ children, value, index, ...other }) => (
   >
     {
       value === index && (
-        <Box>
+        <TabContainer>
           {children}
-        </Box>
+        </TabContainer>
       )
     }
   </div>
@@ -77,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 7px #bebebe',
     position: 'relative',
     zIndex: 1,
+    '& + div': {
+      overflowY: 'hidden',
+    },
   },
   activeTab: {
     color: 'orange',

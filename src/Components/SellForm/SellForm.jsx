@@ -119,7 +119,12 @@ const SellForm = ({ seller }) => {
 
   const publishProduct = async (e) => {
     e.preventDefault()
-    productsRef.add(product).then(() => {
+    productsRef.add({
+      ...product,
+      img: 'https://media.istockphoto.com/photos/strawberry-isolated-on-white-background-picture-id1155880251?k=6&m=1155880251&s=612x612&w=0&h=9ELTZSU18xWi-k2jpHyAekmLJyRmeLEoPfjkOdf9L3o=',
+      seller: seller.name,
+      direction: seller.direction,
+    }).then(() => {
       alert('Producto publicado correctamente')
       setProduct({
         category: '',
@@ -128,7 +133,7 @@ const SellForm = ({ seller }) => {
         price: 0,
         priceUnit: '',
         bestBy: Date.now(),
-        img: 'https://media.istockphoto.com/photos/strawberry-isolated-on-white-background-picture-id1155880251?k=6&m=1155880251&s=612x612&w=0&h=9ELTZSU18xWi-k2jpHyAekmLJyRmeLEoPfjkOdf9L3o=',
+        img: '',
         seller: seller.name,
         direction: seller.direction,
         onSale: true
@@ -137,10 +142,17 @@ const SellForm = ({ seller }) => {
   }
   return (
     <Container>
-      <form>
+      <form onSubmit={publishProduct}>
         <p>Categoría</p>
-        <select defaultValue=''>
-          <option value="" disabled>Selecciona una categoría</option>
+        <select
+          value={product.category}
+          onChange={(e) => setProduct((old) => {
+            return ({
+              ...old, category: e.target.value
+            })
+          })}
+          defaultValue="Producto Natural"
+        >
           <option value="Producto Natural">Producto Natural</option>
           <option value="Producto Empacado">Producto Empacado</option>
           <option value="Comida preparada">Comida Preparada</option>
@@ -148,11 +160,23 @@ const SellForm = ({ seller }) => {
         <div />
         <p>Producto</p>
         <input
+          value={product.title}
+          onChange={(e) => setProduct((old) => {
+            return ({
+              ...old, title: e.target.value
+            })
+          })}
           placeholder="Nombre del producto"
         />
         <div />
         <p>Descripción</p>
         <textarea
+          value={product.flaws}
+          onChange={(e) => setProduct((old) => {
+            return ({
+              ...old, flaws: e.target.value
+            })
+          })}
           placeholder="Describe características especiales del producto"
         />
         <div />
@@ -162,14 +186,31 @@ const SellForm = ({ seller }) => {
             <div>
               <p>Q</p>
               <div>
-                <input type="number" placeholder="0.00" />
+                <input
+                  value={product.price}
+                  onChange={(e) => setProduct((old) => {
+                    return ({
+                      ...old, price: e.target.value
+                    })
+                  })}
+                  type="number"
+                  placeholder="0.00"
+                />
                 <div />
               </div>
             </div>
           </div>
           <div>
             <p>Unidad de precio</p>
-            <select defaultValue=''>
+            <select
+              value={product.priceUnit}
+              onChange={(e) => setProduct((old) => {
+                return ({
+                  ...old, priceUnit: e.target.value
+                })
+              })}
+              defaultValue="por libra"
+            >
               <option value="" disabled>por unidad</option>
               <option value="por libra">por libra</option>
               <option value="por mano">por mano</option>
@@ -181,7 +222,15 @@ const SellForm = ({ seller }) => {
           </div>
         </div>
         <p>Consumir antes de:</p>
-        <input type="date" />
+        <input
+          value={product.bestBy}
+          onChange={(e) => setProduct((old) => {
+            return ({
+              ...old, bestBy: e.target.value
+            })
+          })}
+          type="date"
+        />
         <div />
         <button type="submit">Publicar</button>
       </form>
