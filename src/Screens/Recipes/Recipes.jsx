@@ -6,7 +6,7 @@ import Search from '../../Components/Search/Search'
 
 const Container = styled.div`
   width: 100%;
-  background-color: blueviolet;
+  background-color: #fff9f1;
   height: calc(100vh - 80px);
   padding-top: 30px;
 `

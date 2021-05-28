@@ -14,7 +14,7 @@ const Logout = () => {
 
   return auth.currentUser && (
     <div>
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout} style = {{flexGrow: 1}}>Logout</button>
     </div>
   )
 }

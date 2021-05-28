@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useHistory } from 'react-router-dom'
-import Logout from '../../Components/Logout/Logout'
+import Topbar from '../../Components/Logout/Topbar'
 import Tabs from '../../Components/Tabs/Tabs'
 import { auth } from '../../Services/FirebaseConnection'
 
@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <Logout />
+      <Topbar/>
       <Tabs />
     </div>
   )
