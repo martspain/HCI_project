@@ -16,7 +16,7 @@ const Food = () => {
       <Search
         placeholder="Busca comida, no dejes que se desperdicie"
       />
-      <div class="Food-Scrolleable">
+      <div className="Food-Scrolleable">
         <h1>Ofertas</h1>
         <div className="carousel slide Food-customCarousel" data-ride="carousel" data-type="multi">
           <div className="carousel-inner" role="listbox">

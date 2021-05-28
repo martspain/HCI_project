@@ -16,14 +16,14 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  svg {
+  & > svg {
     width: 150px;
     * {
       fill: #d16700;
     }
   }
 
-  p {
+  & > p {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-style: italic;

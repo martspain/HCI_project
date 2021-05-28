@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
   'hci-theme': {
     backgroundColor: '#FFF9F1',
     boxShadow: '0px 0px 7px #bebebe',
+    position: 'relative',
+    zIndex: 1,
   },
   activeTab: {
     color: 'orange',
