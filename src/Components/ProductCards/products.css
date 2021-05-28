@@ -3,8 +3,10 @@
     width: 18vw;
     height: max-content;
     border: 1.5px solid black;
-    margin-left: 3vw;
-    margin-top: 3vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 .cardProduct-image{
@@ -16,6 +18,11 @@
 
 .cardProduct-cartIcon{
     font-size: 1.5em;
+    cursor: pointer;
+}
+
+#topBar-cartIcon{
+    font-size: 2.5em;
     cursor: pointer;
 }
 

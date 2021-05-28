@@ -1,5 +1,6 @@
 import React from 'react'
 import Logout from './Logout'
+import { AiOutlineShoppingCart } from "react-icons/ai"
 
 const Topbar = () => {
 
@@ -10,7 +11,8 @@ const Topbar = () => {
       </div>
       <span style = {{flexGrow:1}}>THE FOOD CHEST</span>
       <div style = {{flexGrow:1, display:'flex', flexDirection:'row-reverse'}}>
-          icono carrito</div>
+        <AiOutlineShoppingCart id="topBar-cartIcon"/>
+      </div>
       
     </div>
   )

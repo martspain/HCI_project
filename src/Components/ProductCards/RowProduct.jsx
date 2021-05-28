@@ -16,7 +16,7 @@ const RowProduct = ({
     direction,
     image,
     flaws,
-    reserve
+    toCart
 }) => {
     return (
         <div key={`${title} + ${price}`} className="col-5 rowProd-container">
@@ -38,7 +38,7 @@ const RowProduct = ({
                     <p className="rowProd-p margin-zero">{flaws}</p>
                     <div className="row ">
                         <GrIcons.GrNotes className="col-5 margin-zero rowProd-Btns" />
-                        <FaIcons.FaCartPlus className="col-5 margin-zero rowProd-Btns" />
+                        <FaIcons.FaCartPlus onClick={toCart} className="col-5 margin-zero rowProd-Btns" />
                     </div>
                 </div>
             </div>

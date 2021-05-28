@@ -47,11 +47,11 @@ const Bar = styled.div`
   }
 `
 
-const Search = ({ placeholder }) => {
+const Search = ({ placeholder, SearchFun }) => {
   return (
     <Bar>
-      <input
-        placeholder={placeholder}
+      <input id="searchBarInput"
+        placeholder={placeholder} onChange={SearchFun}
       />
       <div />
       <SearchIcon />

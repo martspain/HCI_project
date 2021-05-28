@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.Food-container{
+    overflow-x: hidden;
+}
+
 .Food-test {
     background-color: blue;
     width: 18vw;

@@ -1,50 +1,75 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { auth, firestore } from '../../Services/FirebaseConnection'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
-import CardProduct from '../../Components/ProductCards/CardProduct'
-import './Food.css'
-import { FaPodcast } from 'react-icons/fa'
-import Search from '../../Components/Search/Search'
 import RowProduct from '../../Components/ProductCards/RowProduct'
+import './Food.css'
+import Search from '../../Components/Search/Search'
 
 const Food = () => {
   const response = firestore.collection('products')
-  const [products] = useCollectionData(response, { idField: 'id' })
-  console.log(products)
+  const [products, setProducts] = useState([]);
+  const [visibleProducts, setVisibleProducts] = useState([]);
+  const orderRef = firestore.collection('order')
+
+  const searchProduct = () => {
+    let coming = document.getElementById("searchBarInput");
+    let search = coming.value.toLowerCase();
+    if (search === "") {
+      setVisibleProducts(products);
+    } else {
+      setVisibleProducts([]);
+      products.forEach((prod) => {
+        let product = prod.data().title;
+        let prodLower = product.toLowerCase();
+        let category = prod.data().category;
+        let catLower = category.toLowerCase();
+        if (prodLower.includes(search) || catLower.includes(search)) {
+          setVisibleProducts((oldArray) => [...oldArray, prod]);
+        }
+      });
+    }
+  };
+
+  const fetchProds = async () => {
+    const data = await response.get();
+    data.docs.forEach((item) => {
+      setProducts((oldArray) => [...oldArray, item]);
+      setVisibleProducts((oldArray) => [...oldArray, item]);
+    });
+  };
+
+  const addToCart = (item) => {
+    if(item.data().title !== undefined && item.data().price !== undefined && item.data().priceUnit !== undefined && item.data().category){
+      orderRef.add({
+        orderedBy: auth.currentUser.email,
+        itemName: item.data().title,
+        itemPrice: `${item.data().price} x ${item.data().priceUnit}`,
+        category: item.data().category
+      })
+      alert("Producto agregado exitosamente.")
+    }
+  }
+
+  useEffect(() => {
+    fetchProds();
+  }, []);
+
+  //realizar el mapping de los productos con visileProducts
   return (
     <div className="Food-Container">
-      <Search
-        placeholder="Busca comida, no dejes que se desperdicie"
+      <Search SearchFun={searchProduct}
+        placeholder="Busca comida o categorias, ¡No dejes que se desperdicien!"
       />
-      <div className="Food-Scrolleable">
-        <h1>Ofertas</h1>
-        <div className="carousel slide Food-customCarousel" data-ride="carousel" data-type="multi">
-          <div className="carousel-inner" role="listbox">
-            <div className="carousel-item active">
-              <div className="row justify-content-center">
-                <div className="col-2 Food-test">Uno</div>
-                <div className="col-2 Food-test">Dos</div>
-                <div className="col-2 Food-test">tRES</div>
-                <div className="col-2 Food-test">CUATRO</div>
-              </div>
-            </div>
-            <div className="carousel-item active">
-              <div className="row justify-content-center">
-                <div className="col-2 Food-test">Cinco</div>
-                <div className="col-2 Food-test"></div>
-                <div className="col-2 Food-test"></div>
-                <div className="col-2 Food-test"></div>
-              </div>
-            </div>
-          </div>
-          <a className="carousel-control-prev" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="carousel-control-next" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
+      <div className="Food-container">
+        <h1>Productos</h1>
+        <div className="row Food-container justify-content-center">
+          {visibleProducts.map((elem, index) => {
+            console.log(elem.data())
+            return (
+              <RowProduct cartFun={() => addToCart(elem)} seller={elem.data().seller} title={elem.data().title} price={elem.data().price}
+                unit={elem.data().priceUnit} direction={elem.data().direction} flaws={elem.data().flaws} bestBy={elem.data().bestBy}
+                image={elem.data().img}  category={elem.data().category} priceUnit={elem.data().priceUnit} toCart={() => addToCart(elem)}/>
+            )
+          })}
         </div>
       </div>
     </div>
