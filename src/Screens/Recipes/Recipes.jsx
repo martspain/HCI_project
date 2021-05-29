@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import RecipeDisp from './RecipeDisp'
 import RecipeBottomBar from './RecipeBottomBar'
 import Search from '../../Components/Search/Search'
+import { firestore } from '../../Services/FirebaseConnection'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 const Container = styled.div`
   width: 100%;
@@ -12,14 +14,27 @@ const Container = styled.div`
 `
 
 const Recipes = () => {
-let ing = ["ingrediente 1","ingrediente 2","ingrediente 3","ingrediente 4","ingrediente 5"]
-let steps = ["paso 1", "paso 2", "paso 3", "paso 4", "paso 5","paso 1", "paso 2", "paso 3", "paso 4", "paso 5","paso 1", "paso 2", "paso 3", "paso 4", "paso 5","paso 1", "paso 2", "paso 3", "paso 4", "paso 5",]
+  const recipesRef = firestore.collection('recipes')
+  const query = recipesRef.orderBy('name')
+  const [recipes] = useCollectionData(query, {idField: 'id'})
+  const [index, setIndex] = useState(0)
+  
   return(
     <Container>
       <Search
         placeholder="Busca recetas, aprovecha cualquier ingrediente"
       />
-      <RecipeDisp title = 'Nombre de la receta' ingredients = {ing} steps = {steps}/>
+      {
+        recipes && (recipes.length > 0) &&
+        <RecipeDisp
+          title={recipes[index].name}
+          displayImage={recipes[index].img}
+          ingredients={recipes[index].ingredients}
+          steps={recipes[index].steps}
+          author={recipes[index].author}
+          description={recipes[index].description}
+        />
+      }
       <RecipeBottomBar/>
     </Container>
   )
