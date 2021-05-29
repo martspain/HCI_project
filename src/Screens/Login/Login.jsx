@@ -59,7 +59,7 @@ const Login = () => {
     auth.signInWithPopup(provider).then((result) => {
       history.push('/')
     }).catch((error) => {
-      alert(error.message)
+      alert('No se ha podido iniciar sesión.')
     })
   }
 
