@@ -13,8 +13,8 @@ const Logout = () => {
   }
 
   return auth.currentUser && (
-    <div>
-      <button onClick={logout} style = {{flexGrow: 1}}>Logout</button>
+    <div style = {{flexGrow:1}}>
+      <button onClick={logout} style = {{width: '100%', backgroundColor:'#ffc971', height:'100%', borderWidth: '0px'}}>Cerrar sesion</button>
     </div>
   )
 }
