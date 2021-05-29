@@ -48,10 +48,12 @@ const Container = styled.div`
     .ingredient {
       background-color: wheat;
       width: fit-content;
-      min-width: 100px;
+      padding-left: 15px;
+      padding-right: 15px;
       text-align: center;
       margin-left: 25px;
       border-radius: 5px;
+      text-align: left;
     }
   }
 
