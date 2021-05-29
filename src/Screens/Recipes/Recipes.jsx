@@ -10,7 +10,6 @@ const Container = styled.div`
   width: 100%;
   background-color: #fff9f1;
   height: calc(100vh - 80px);
-  padding-top: 30px;
 `
 
 const Recipes = () => {
@@ -21,9 +20,6 @@ const Recipes = () => {
   
   return(
     <Container>
-      <Search
-        placeholder="Busca recetas, aprovecha cualquier ingrediente"
-      />
       {
         recipes && (recipes.length > 0) &&
         <RecipeDisp

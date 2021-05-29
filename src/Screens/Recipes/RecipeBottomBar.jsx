@@ -27,7 +27,7 @@ const RecipeBottomBar = ({goLeft, newRecipe, goRight}) => {
   return(
     <Container>
       <button onClick={goLeft}>{'<'}</button>
-      <button onClick={newRecipe}>{'+'}</button>
+      <button onClick={newRecipe}>{''}</button>
       <button onClick={goRight}>{'>'}</button>
     </Container>
   )
