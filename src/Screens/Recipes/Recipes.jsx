@@ -35,7 +35,7 @@ const Recipes = () => {
           description={recipes[index].description}
         />
       }
-      <RecipeBottomBar/>
+      <RecipeBottomBar goLeft={() => setIndex((old) => (old-1 >= 0) ? old-1 : old)} goRight={() => setIndex((old) => (old+1 < recipes?.length) ? old+1 : old)} />
     </Container>
   )
 }
