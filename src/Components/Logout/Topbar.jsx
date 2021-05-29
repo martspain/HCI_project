@@ -1,8 +1,15 @@
 import React from 'react'
 import Logout from './Logout'
 import { AiOutlineShoppingCart } from "react-icons/ai"
+import { useHistory } from 'react-router-dom'
 
 const Topbar = () => {
+
+  const history = useHistory()
+
+  const navToCart = () =>{
+    history.push('/cart');
+  }
 
   return  (
     <div style = {{display:'flex', flexDirection:'row', justifyItems:'flex-start', width:'100%', backgroundColor:'#ffc971'}}>
@@ -11,7 +18,7 @@ const Topbar = () => {
       </div>
       <span style = {{flexGrow:1}}>THE FOOD CHEST</span>
       <div style = {{flexGrow:1, display:'flex', flexDirection:'row-reverse'}}>
-        <AiOutlineShoppingCart id="topBar-cartIcon"/>
+        <AiOutlineShoppingCart id="topBar-cartIcon" onClick={() => navToCart()}/>
       </div>
       
     </div>

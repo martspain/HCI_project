@@ -43,7 +43,7 @@ const Food = () => {
         orderedBy: auth.currentUser.email,
         itemName: item.data().title,
         itemPrice: `${item.data().price} x ${item.data().priceUnit}`,
-        category: item.data().category
+        seller: item.data().seller
       })
       alert("Producto agregado exitosamente.")
     }
@@ -67,7 +67,8 @@ const Food = () => {
             return (
               <RowProduct cartFun={() => addToCart(elem)} seller={elem.data().seller} title={elem.data().title} price={elem.data().price}
                 unit={elem.data().priceUnit} direction={elem.data().direction} flaws={elem.data().flaws} bestBy={elem.data().bestBy}
-                image={elem.data().img}  category={elem.data().category} priceUnit={elem.data().priceUnit} toCart={() => addToCart(elem)}/>
+                image={elem.data().img}  category={elem.data().category} priceUnit={elem.data().priceUnit} toCart={() => addToCart(elem)}
+                title={elem.data().title}/>
             )
           })}
         </div>

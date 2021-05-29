@@ -50,14 +50,14 @@ const Login = () => {
 
   useEffect(() => {
     if (user && !loading) {
-      history.push('/')
+      history.push('/home')
     }
   })
 
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
     auth.signInWithPopup(provider).then((result) => {
-      history.push('/')
+      history.push('/home')
     }).catch((error) => {
       alert('No se ha podido iniciar sesión.')
     })

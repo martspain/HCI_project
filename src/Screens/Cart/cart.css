@@ -1,7 +1,3 @@
-.margin-zero{
-    margin: 0%;
-}
-
 .padding-zero{
     padding: 0%;
 }
@@ -20,6 +16,18 @@
 
 .prodPriceCart{
     font-size: 1.3em;
+}
+
+.Cart-navbar{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #ffc971;
+}
+
+.Cart-backButton{
+    background-color: #ffc971;
+    height: '100%'; 
+    border-width: 0px;    
 }
 
 .mainCart{
@@ -103,8 +111,6 @@
 .cartProduct{
     margin-top: 4vh;
     margin-bottom: 2vh;
-    margin-right: 2vh;
-    margin-left: 2vh;
     border-radius: 5px;
     box-shadow: 3px 3px 3px 3px #545454;
 }
@@ -112,10 +118,10 @@
 .cartDelete{
     height: 50px;
     width: 100%;
-    background: #f0f0f0;
-    background: linear-gradient(to left, #f0f0f0 50%, rgb(255, 80, 80) 50%) right;
+    background: #f5deb3;
+    background: linear-gradient(to left, #f5deb3 50%, rgb(255, 80, 80) 50%) right;
     background-size: 200%;
-    transition: 500ms ease-out;
+    transition: 200ms ease-out;
     border-radius: 5px;
     border: white;
     text-justify: center;

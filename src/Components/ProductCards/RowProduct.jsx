@@ -16,41 +16,33 @@ const RowProduct = ({
     direction,
     image,
     flaws,
-    toCart
+    toCart,
 }) => {
     return (
-        <div key={`${title} + ${price}`} className="col-5 rowProd-container">
+        <div key={`${title} + ${price}`} className="col-10 rowProd-container">
             <div className="row rowProd-header">
-                <h5 className="col-12 rowProd-category">{`#${category}`}</h5>
+                <h5 className="col-12 rowProd-category">{`${category}`}</h5>
             </div>
             <div className="row rowProd-infoContainer">
+                <h3>{title}</h3>
                 <div className="col-6 align-items-center rowProd-leftPart">
                     <img src={image} className="col-12 rowProd-image " alt="imagen" />
                     <p className="col-12 align-top prodDescription margin-zero">{`Vence el: ${bestBy}`}</p>
                 </div>
                 <div className="col-6 margin-zero rowProd-rightPart">
-                    <p className="rowProd-p ">{seller}</p>
-                    <p className="rowProd-p ">{`Q.${price} x ${priceUnit}`}</p>
                     <div className="row rowProd-direction">
-                        <Io5Icons.IoLocationOutline className="col-2 margin-zero rowProd-locIcon" />
+                        <p className="rowProd-seller ">{seller}</p>
+                        <Io5Icons.IoLocationOutline className="col-1 margin-zero rowProd-locIcon" />
                         <p className="col-10 rowProd-p ">{direction}</p>
                     </div>
                     <p className="rowProd-p margin-zero">{flaws}</p>
+                    <p className="rowProd-p ">{`Q.${price} x ${priceUnit}`}</p>
                     <div className="row ">
-                        <GrIcons.GrNotes className="col-5 margin-zero rowProd-Btns" />
-                        <FaIcons.FaCartPlus onClick={toCart} className="col-5 margin-zero rowProd-Btns" />
+                        <FaIcons.FaCartPlus onClick={toCart} className="col-12 rowProd-Btns" />
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-{/* 
-<h4 className="col rowProd-title ">{title}</h4>
-<div className="row align-items-center">
-    <img src={image} className="col-7 align-middle productImage " alt="imagen" />
-    
-</div>
-<div className="row align-items-center margin-zero">
-</div> */}
 export default RowProduct;
