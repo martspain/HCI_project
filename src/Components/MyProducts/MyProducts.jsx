@@ -20,7 +20,7 @@ const MyProducts = ({ seller }) => {
 
   return (
     <Container>
-      <h1>Mis productos</h1>
+      <h1>Mis productos publicados</h1>
       {
         products && products.map((product) => <p>{product.title}</p>)
       }

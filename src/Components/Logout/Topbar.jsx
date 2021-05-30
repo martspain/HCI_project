@@ -12,12 +12,12 @@ const Topbar = () => {
   }
 
   return  (
-    <div style = {{display:'flex', flexDirection:'row', justifyItems:'flex-start', width:'100%', backgroundColor:'#ffc971'}}>
+    <div style = {{display:'flex', flexDirection:'row', justifyItems:'space-between', width:'100%', backgroundColor:'#ffc971'}}>
       <div style = {{flexGrow:1, display:'flex', justifyItems:'flex-start'}}>
       <Logout/>
       </div>
-      <span style = {{flexGrow:1}}>THE FOOD CHEST</span>
-      <div style = {{flexGrow:1, display:'flex', flexDirection:'row-reverse'}}>
+      <span style={{ transform: 'translateX(-105px) translateY(4px)' }}>THE FOOD CHEST</span>
+      <div style = {{display:'flex', flexDirection:'row-reverse'}}>
         <AiOutlineShoppingCart id="topBar-cartIcon" onClick={() => navToCart()}/>
       </div>
       

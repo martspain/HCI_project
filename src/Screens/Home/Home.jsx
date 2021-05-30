@@ -9,10 +9,16 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
   
-  p h1 span {
+  p h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: italic;
   }
 `
 

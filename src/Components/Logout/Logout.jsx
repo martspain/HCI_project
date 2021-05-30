@@ -14,8 +14,8 @@ const Logout = () => {
 
   return auth.currentUser && (
 
-    <div style={{ flexGrow: 1 }}>
-      <button onClick={logout} style={{ width: '100%', backgroundColor: '#ffc971', height: '100%', borderWidth: '0px' }}>Cerrar sesion</button>
+    <div>
+      <button onClick={logout} style={{ width: '100px', backgroundColor: '#ffc971', height: '100%', borderWidth: '0px', fontSize: '0.7em' }}>Cerrar sesion</button>
     </div>
   )
 }
